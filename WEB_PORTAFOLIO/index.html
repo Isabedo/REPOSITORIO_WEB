@@ -1,135 +1,179 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>PORTAFOLIO</title>
+        <title>Portafolio — Isabela</title>
         <meta name="author" content="Isabela">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style/stylesheet.css">
     </head>
     <body>
-        <header>
-        <a href="#home" class="logo"> PORTAFOLIO</a>
-        <nav>
-            <a href="#home">Inicio</a>
-            <a href="#programacion">Programación</a>
-            <a href="#arte">Arte 2D y 3D</a>
-        </nav>
+
+        <header class="site-header">
+            <a href="#inicio" class="logo">PORTAFOLIO</a>
+            <nav class="site-nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#programacion">Programación</a>
+                <a href="#arte">Arte 2D y 3D</a>
+            </nav>
         </header>
-        
-        <div id="home" class="seccion inicio">
-            <img src="RECURSOS/chooper.webp" alt="Foto de perfil" class="home-img">
-            <div class="home-content">
-            <h1>Hola, mi nombre es <span>Isabela</span></h1>
-            <h3> soy <span>Estudiante de comunicación y entretenimiento digital</span></h3>
-            <b>Bienvenidos a mi portafolio, aquí podrán encontrar algunos de mis proyectos realizados <br> durante mi carrera universitaria, entre ellos hay programación, animación 2D y 3D.</p>
-            </div>
-        </div>
 
-        <div id="programacion" class="seccion "> 
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <h3>REM: Los fragmentos de Milo</h3>
-                    </div>
-                <div class="card-back">
-                    <div class ="card-back-top"> <h3>REM: Los fragmentos de Milo</h3></div>
-                    <div class="foto-container"><img src="RECURSOS/milo.png" alt="Portada del juego" class="card-img"></div>
-                    
-                    <p class="text">Juego  2D plataformero estilo Metroidvania  </p>
-                    <a href="https://kira28.itch.io/rem-los-fragmentos-de-milo" target="_blank">Ver más</a>
+        <main>
+            <section id="inicio" class="seccion seccion--inicio">
+                <img src="RECURSOS/chooper.webp" alt="Foto de perfil de Isabela" class="perfil-img">
+                <div class="perfil-contenido">
+                    <h1>Hola, mi nombre es <span>Isabela</span></h1>
+                    <h2>Soy <span>Estudiante de comunicación y entretenimiento digital</span></h2>
+                    <p>Bienvenidos a mi portafolio. Aquí podrán encontrar algunos de mis proyectos realizados
+                    durante mi carrera universitaria: programación, animación 2D y 3D.</p>
                 </div>
-            </div>
-        </div>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                    <h3>PONG - RECREACIÓN</h3>
-                    <p class="text"></p>
-                    </div>
-                <div class="card-back">
-                    <div class ="card-back-top"> <h3>PONG - RECREACIÓN</h3></div>
-                    <div class="foto-container"><img src="RECURSOS/pong.jpg" alt="Portada del juego" class="card-img"></div>
-                    
-                    <p class="text">Recreación del famoso juego PONG como practica de programación</p>
-                    <a href="https://github.com/Isabedo/Portafolio-" target="_blank">Ver más</a>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                    <h3>THE LAST MEMORIES</h3>
-                    </div>
-                <div class="card-back">
-                    <div class ="card-back-top"> <h3>The Last Memories</h3></div>
-                    <div class="foto-container"><img src="RECURSOS/mascara.png" alt="Portada del juego" class="card-img"></div>
-                    <p class="text">Juego realizado en Unity para mi primera JAM con tematica de mascaras </p>
-                    <a href="https://github.com/MakabeD/Mask" target="_blank">Ver más</a>
-                </div>
-            </div>
-        </div>
-        </div>
+            </section>
 
+            <section id="programacion" class="seccion seccion--galeria">
+                <h2 class="seccion-titulo">Programación</h2>
+                <div class="galeria">
 
-        <div id="arte" class="seccion"> 
-           <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                    <h3>TODO LO QUE NO DIJIMOS</h3>
-                    </div>
-                <div class="card-back">
-                    <div class ="card-back-top"> <h3>TODO LO QUE NO DIJIMOS</h3></div>
-                    <div class="foto-container"><img src="RECURSOS/animacion.png" alt="Animación 2D" class="card-img"></div>
-                    <p class="text">Animacion 2D</p>
-                    <a href="RECURSOS/ANIMACION2D.mp4" target="_blank">Ver más</a>
+                    <article class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>REM: Los fragmentos de Milo</h3>
+                            </div>
+                            <div class="card-back">
+                                <div class="card-back-top">
+                                    <h3>REM: Los fragmentos de Milo</h3>
+                                </div>
+                                <div class="foto-contenedor">
+                                    <img src="RECURSOS/milo.png" alt="Portada del juego REM" class="card-img">
+                                </div>
+                                <p class="card-descripcion">Juego 2D plataformero estilo Metroidvania</p>
+                                <a href="https://kira28.itch.io/rem-los-fragmentos-de-milo" target="_blank" class="card-enlace">Ver más</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>PONG — Recreación</h3>
+                            </div>
+                            <div class="card-back">
+                                <div class="card-back-top">
+                                    <h3>PONG — Recreación</h3>
+                                </div>
+                                <div class="foto-contenedor">
+                                    <img src="RECURSOS/pong.jpg" alt="Captura del juego Pong" class="card-img">
+                                </div>
+                                <p class="card-descripcion">Recreación del famoso juego PONG como práctica de programación</p>
+                                <a href="https://github.com/Isabedo/Portafolio-" target="_blank" class="card-enlace">Ver más</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>The Last Memories</h3>
+                            </div>
+                            <div class="card-back">
+                                <div class="card-back-top">
+                                    <h3>The Last Memories</h3>
+                                </div>
+                                <div class="foto-contenedor">
+                                    <img src="RECURSOS/mascara.png" alt="Portada del juego The Last Memories" class="card-img">
+                                </div>
+                                <p class="card-descripcion">Juego realizado en Unity para mi primera Game Jam, con temática de máscaras</p>
+                                <a href="https://github.com/MakabeD/Mask" target="_blank" class="card-enlace">Ver más</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-            </div>
-        </div>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                    <H3>RESTART</H3>
-                    </div>
-                <div class="card-back">
-                    <div class ="card-back-top"> <h3>RESTART</h3></div>
-                    <div class="foto-container"><img src="RECURSOS/animacion3d.png" alt="Animación 3D" class="card-img"></div>
-                    <p class="text">Animacion 3D</p>
-                    <a href="RECURSOS/CORTO3D.MP4" target="_blank">Ver más</a>
+            </section>
+
+            <section id="arte" class="seccion seccion--galeria">
+                <h2 class="seccion-titulo">Arte 2D y 3D</h2>
+                <div class="galeria">
+
+                    <article class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>Todo lo que no dijimos</h3>
+                            </div>
+                            <div class="card-back">
+                                <div class="card-back-top">
+                                    <h3>Todo lo que no dijimos</h3>
+                                </div>
+                                <div class="foto-contenedor">
+                                    <img src="RECURSOS/animacion.png" alt="Fotograma de la animación 2D" class="card-img">
+                                </div>
+                                <p class="card-descripcion">Animación 2D</p>
+                                <a href="RECURSOS/ANIMACION2D.mp4" target="_blank" class="card-enlace">Ver más</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>Restart</h3>
+                            </div>
+                            <div class="card-back">
+                                <div class="card-back-top">
+                                    <h3>Restart</h3>
+                                </div>
+                                <div class="foto-contenedor">
+                                    <img src="RECURSOS/animacion3d.png" alt="Fotograma de la animación 3D Restart" class="card-img">
+                                </div>
+                                <p class="card-descripcion">Animación 3D</p>
+                                <a href="RECURSOS/CORTO3D.MP4" target="_blank" class="card-enlace">Ver más</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>TARDIS</h3>
+                            </div>
+                            <div class="card-back">
+                                <div class="card-back-top">
+                                    <h3>TARDIS</h3>
+                                </div>
+                                <div class="foto-contenedor">
+                                    <img src="RECURSOS/RENDER_COMPOSITING.png" alt="Render 3D de la TARDIS de Doctor Who" class="card-img">
+                                </div>
+                                <p class="card-descripcion">Render 3D inspirado en la máquina del tiempo del Doctor Who</p>
+                                <a href="RECURSOS/RENDER_COMPOSITING.png" target="_blank" class="card-enlace">Ver más</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <h3>Jarrones</h3>
+                            </div>
+                            <div class="card-back">
+                                <div class="card-back-top">
+                                    <h3>Jarrones</h3>
+                                </div>
+                                <div class="foto-contenedor">
+                                    <img src="RECURSOS/Jarrones_render.png" alt="Render 3D de jarrones texturizados" class="card-img">
+                                </div>
+                                <p class="card-descripcion">Render 3D haciendo uso de distintas técnicas de texturización</p>
+                                <a href="RECURSOS/Jarrones_render.png" target="_blank" class="card-enlace">Ver más</a>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
-            </div>
-        </div>
-        <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                    <H3>TARDIS</H3>
-                    </div>
-                <div class="card-back">
-                    <div class ="card-back-top"> <h3>TARDIS</h3></div>
-                    <div class="foto-container"><img src="RECURSOS/RENDER_COMPOSITING.png" alt="Render 3D" class="card-img"></div>
-                    <p class="text">Render 3D inspirado en la maquina del tiempo del doctor Who</p>
-                    <a href="RECURSOS/RENDER_COMPOSITING.png" target="_blank">Ver más</a>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                    <H3>JARRONES</H3>
-                    </div>
-                <div class="card-back">
-                    <div class ="card-back-top"> <h3>JARRONES</h3></div>
-                    <div class="foto-container"><img src="RECURSOS/Jarrones_render.png" alt="Portada del juego" class="card-img"></div>
-                    
-                    <p class="text">Render 3D haciendo uso de distintas técnicas de texturización</p>
-                    <a href="RECURSOS/Jarrones_render.png" target="_blank">Ver más</a>
-                </div>
-            </div>
-        </div>
-        </div>
-        </div>
-        
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <p>© 2025 Isabela — Portafolio universitario</p>
+        </footer>
 
     </body>
 </html>

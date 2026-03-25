@@ -16,19 +16,21 @@ html {
 
 body {
     width: 100%;
-    height: 100vh;
     overflow-x: hidden;
     background-color: #000;
     color: #ffffff;
 }
 
-header {
-    margin-top: 20px;
+span {
+    color: #7e0000;
+}
+
+.site-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 9%;
+    padding: 1.2rem 9%;
     background-color: transparent;
     display: flex;
     justify-content: space-between;
@@ -37,81 +39,103 @@ header {
 }
 
 .logo {
-    font-size: 30px;
+    font-size: 28px;
     color: #7e0000;
     font-weight: 800;
+    transition: transform 0.2s;
 }
 
 .logo:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-nav a {
+.site-nav a {
     color: #fff;
-    font-size: 20px;
-    margin-left: 4rem;
+    font-size: 18px;
+    margin-left: 3rem;
     font-weight: 500;
     border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
 }
 
-nav a:hover {
+.site-nav a:hover {
     color: #7e0000;
-    border-bottom: #7e0000 2px solid;
+    border-bottom-color: #7e0000;
 }
 
 .seccion {
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
     padding: 100px 5% 60px;
-    gap: 40px;
 }
 
-.inicio {
+.seccion--inicio {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    background-color: #000;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    background-color: #000;
 }
 
-.home-img {
-    width: 300px;
-    height: 300px;
+.perfil-img {
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     object-fit: cover;
+    border: 4px solid #7e0000;
 }
 
-.home .home-content h1 {
-    font-size: 6rem;
+.perfil-contenido h1 {
+    font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.3;
 }
 
-span {
-    color: #7e0000;
+.perfil-contenido h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0.5rem 0 1rem;
 }
 
-.home .home-content h3 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+.perfil-contenido p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #ccc;
+    max-width: 500px;
+    line-height: 1.7;
+}
+
+.seccion--galeria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seccion-titulo {
+    font-size: 2rem;
     font-weight: 700;
+    color: #fff;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #7e0000;
+    padding-bottom: 8px;
 }
 
-/* ===================== */
-/*     NUEVA TARJETA     */
-/* ===================== */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+}
 
 .card {
-    width: 260px;
-    height: 380px;
+    width: 290px;
+    height: 390px;
     border-radius: 24px;
     perspective: 1000px;
-    cursor: pointer;
 }
 
 .card-inner {
@@ -134,33 +158,28 @@ span {
     position: absolute;
     backface-visibility: hidden;
     border-radius: 24px;
-    overflow: visible;
 }
 
-/* --- FRENTE --- */
 .card-front {
     background: linear-gradient(160deg, #ff6b6b 0%, #7e0000 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 24px;
+    padding-top: 160px;
     box-shadow: 0 20px 60px rgba(126, 0, 0, 0.4);
 }
 
 .card-front h3 {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 15px;
-    font-weight: 800;
-    padding: 130px 12px 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 0 16px;
     text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
-/* --- REVERSO --- */
 .card-back {
     transform: rotateY(180deg);
     background: #fff;
@@ -173,7 +192,7 @@ span {
     overflow: hidden;
 }
 
-/* Zona de gradiente superior del reverso */
+
 .card-back-top {
     position: absolute;
     top: 0;
@@ -185,8 +204,19 @@ span {
     z-index: 0;
 }
 
-/* Imagen flotante que cruza las dos zonas */
-.foto-container {
+.card-back-top h3 {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    padding: 35px 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.foto-contenedor {
     position: absolute;
     top: 18%;
     left: 50%;
@@ -208,37 +238,22 @@ span {
     border-radius: 17px;
 }
 
-/* Título en el reverso (debajo de la imagen) */
-.card-back-top h3 {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    text-align: center;
-    padding: 25px 12px 0;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-}
-
-/* Texto descripción */
-.text {
-    font-size: 12px;
+.card-descripcion {
+    font-size: 15px;
     text-align: center;
     padding: 0 20px;
     color: #555;
     font-weight: 400;
     line-height: 1.5;
-    margin-top: 8px;
-    margin-bottom: 16px;
+    margin-top: 10px;
+    margin-bottom: 22px;
     position: relative;
     z-index: 2;
-    /* empuja el texto debajo de la foto */
     margin-top: 100px;
+
 }
 
-/* Botón */
-.card-back a {
+.card-enlace {
     display: inline-block;
     padding: 10px 36px;
     background: linear-gradient(135deg, #ff6b6b, #7e0000);
@@ -246,7 +261,6 @@ span {
     font-size: 13px;
     font-weight: 600;
     border-radius: 50px;
-    text-decoration: none;
     letter-spacing: 0.5px;
     box-shadow: 0 6px 20px rgba(126, 0, 0, 0.4);
     transition: transform 0.2s, box-shadow 0.2s;
@@ -254,8 +268,19 @@ span {
     z-index: 2;
 }
 
-.card-back a:hover {
+.card-enlace:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 28px rgba(126, 0, 0, 0.55);
     background: linear-gradient(135deg, #7e0000, #ff6b6b);
-}   
+}
+
+
+.site-footer {
+    width: 100%;
+    padding: 24px 9%;
+    background-color: #0a0a0a;
+    text-align: center;
+    color: #555;
+    font-size: 14px;
+    border-top: 1px solid #1a1a1a;
+}
