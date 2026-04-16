@@ -1,6 +1,8 @@
 const buttonTheme = document.getElementById('change-theme');
 const buttonLenguage = document.getElementById('change-lenguage');
+
 let currentLanguage = 'es';
+
 
 buttonTheme.addEventListener('click', () => {
     if (document.body.classList.contains('light-theme')) {

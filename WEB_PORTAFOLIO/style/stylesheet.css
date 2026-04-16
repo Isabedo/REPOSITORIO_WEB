@@ -31,22 +31,19 @@ html {
 }
 
 body {
-    width: 100%;
+    width: 100vw;
     overflow-x: hidden;
     background-color: var(--color-background);
     color: var(--color-font);
 }
 
-span {
-    color: var(--color-primary);
-}
 
 .site-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1.2rem 9%;
+    padding: 1rem 2rem;
     background-color: transparent;
     display: flex;
     justify-content: space-between;
@@ -76,7 +73,7 @@ span {
 .logo {
     font-size: 28px;
     color: var(--color-primary);
-    font-weight: 800;
+    font-weight: 800rem;
     transition: transform 0.2s;
 }
 
@@ -86,9 +83,9 @@ span {
 
 .site-nav a {
     color: var(--color-font);
-    font-size: 18px;
+    font-size: 1rem;
     margin-left: 3rem;
-    font-weight: 500;
+    font-weight: 10rem;
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
 }
@@ -99,9 +96,9 @@ span {
 }
 
 .seccion {
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
-    padding: 100px 5% 60px;
+    padding: 7rem ;
 }
 
 .seccion--inicio {
@@ -152,24 +149,24 @@ span {
     font-size: 2rem;
     font-weight: 700;
     color: var(--color-font);
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    text-transform: uppercase; 
+    letter-spacing: 0.5rem;
     border-bottom: 3px solid var(--color-primary);
-    padding-bottom: 8px;
+    padding-bottom: 2rem;
 }
 
 .galeria {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 1rem;
     width: 100%;
 }
 
 .card {
-    width: 290px;
-    height: 390px;
+    width: 20rem;
+    height: 25rem;
     border-radius: 24px;
     perspective: 1000px;
 }
@@ -202,17 +199,17 @@ span {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 160px;
+    padding-top: 11rem;
     box-shadow: 0 20px 60px var(--color-primary)(126, 0, 0, 0.4);
 }
 
 .card-front h3 {
     color: var(--color-font);
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.05rem;
     text-align: center;
-    padding: 0 16px;
+    padding: 0 2rem;
     text-transform: uppercase;
 }
 
@@ -223,7 +220,7 @@ span {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    padding-bottom: 24px;
+    padding-bottom: 2rem;
     box-shadow: 0 20px 60px var(--color-primary)(126, 0, 0, 0.35);
     overflow: hidden;
 }
@@ -244,10 +241,10 @@ span {
     position: relative;
     z-index: 1;
     color: var(--color-font);
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 600;
     text-align: center;
-    padding: 35px 12px 0;
+    padding: 2rem 1rem 0;
     text-transform: uppercase;
     letter-spacing: 0.4px;
 }
@@ -257,14 +254,14 @@ span {
     top: 18%;
     left: 50%;
     transform: translateX(-50%);
-    width: 160px;
-    height: 160px;
+    width: 11rem;
+    height: 10rem;
     background: var(--color-background);
     border-radius: 20px;
     z-index: 2;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    border: 3px solid #fff;
+    border: 3px solid var(--color-font);
 }
 
 .card-img {
@@ -275,29 +272,27 @@ span {
 }
 
 .card-descripcion {
-    font-size: 15px;
+    font-size: 1rem;
     text-align: center;
-    padding: 0 20px;
+    padding: 0 1rem;
     color: var(--color-fontFooter);
     font-weight: 400;
     line-height: 1.5;
     margin-top: 10px;
-    margin-bottom: 22px;
+    margin-bottom: 1rem;
     position: relative;
     z-index: 2;
-    margin-top: 100px;
-
 }
 
 .card-enlace {
     display: inline-block;
-    padding: 10px 36px;
+    padding: 1rem 1rem;
     background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
     color: var(--color-font);
     font-size: 13px;
     font-weight: 600;
     border-radius: 50px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.05rem;
     box-shadow: 0 6px 20px var(--color-primary)(126, 0, 0, 0.4);
     transition: transform 0.2s, box-shadow 0.2s;
     position: relative;
@@ -313,10 +308,10 @@ span {
 
 .site-footer {
     width: 100%;
-    padding: 24px 9%;
+    padding: 1rem;
     background-color: var(--color-background);
     text-align: center;
     color: var(--color-fontFooter);
-    font-size: 14px;
+    font-size: 1rem;
     border-top: 1px solid var(--color-primary);
 }
