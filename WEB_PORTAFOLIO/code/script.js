@@ -1,5 +1,6 @@
 const buttonTheme = document.getElementById('change-theme');
 const buttonLenguage = document.getElementById('change-lenguage');
+const buttonHamburguesa = document.getElementById('hamburguesa')
 
 let currentLanguage = 'es';
 
@@ -75,3 +76,13 @@ function changeLenguage(lang) {
         }
     });
 }
+
+buttonHamburguesa.addEventListener('click',function() {
+    document.getElementById('site-nav').classList.toggle('abierto');
+})
+
+document.querySelectorAll('#site-nav a').forEach(function(enlace){
+    enlace.addEventListener('click',function(){
+        document.getElementById('site-nav').classList.remove('abierto');
+    })
+})
