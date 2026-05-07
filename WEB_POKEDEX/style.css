@@ -3,21 +3,28 @@
     box-sizing: border-box;
     margin: 0;
 }
-
+::root{
+    --primary-color: #ff0000;
+    --secondary-color: #7cdeff;
+    --first-color: #fff;
+    
+}
 body{
-    background-color: #f2f2f2;
+    background-color:linear-gradient(90deg, #805c00, #ff0000);
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
 header{
     background-color: #ff0000;
     color: #fff;
-    padding: 30px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
     text-align: center;
-    display: flex;
-    justify-content: space-between;
     font-size: 22px;
 }
+
 
 header input{
     padding: 15px;
@@ -25,6 +32,26 @@ header input{
     border: none;
     border-radius: 5px;
     font-size: 16px;
+}
+
+header button{
+    padding: 15px 25px;
+    background-color: #fff;
+    color: #ff0000;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+header button:hover{
+    background-color: #7cdeff;
+    color: #fff;
+}
+
+header button:active{
+    background-color: #0e51818f;
+    color: #fff;
 }
 
 main{
@@ -37,13 +64,14 @@ main{
 }
 
 .card{
-    background-color: #fff;
+    background-color: #7cdeff;
+    border: 10px solid #0e51818f;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 15px;
-    padding: 15px;
+    padding: 30px;
     width: 28rem;
     height: 48rem;
 }
@@ -63,21 +91,24 @@ main{
     justify-content: space-between;
     align-items: center;
     margin-left: 10px;
-    font-size: 14px;
+    font-size: 17px;
+}
+
+#id{
+    margin-right: 15px;
 }
 
 .card-image-container{
     background-color: #fff;
     border-radius: 10px;
-    border: 3px solid #ff0000;
+    border: 3px solid #0e51818f;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    padding: 15px;
-    width: 25rem;
+   
+    width: 100%;
     height: 40%;
     z-index: 0;
 }
@@ -91,38 +122,103 @@ main{
 .card-phrase{
     background-color: #b0b0b0;
     border-radius: 5px;
-    width: 115%;
+    width: 110%;
     position: relative;
-    top: -2rem;
-    font-size: 14px;
+    top: -3rem;
+    font-size: 17px;
     text-align: center;
     z-index: 1;
 }
 
 .card-stats{
-    background-color: #787575;
     border-radius: 10px;
-    border: 3px solid #ff0000;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    height: 40%;
+    font-size: 18px;
+    padding: 20px;
+    height: 35%;
     
 }
-
-.card-footer{
-    background-color: #d07777;
-    border-radius: 10px;
-    border: 3px solid #ff0000;
+.stats{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.description{
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.footer-stats{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.card-footer{
+    border-radius: 10px;
+    display: block;
+    justify-content: right;
     padding: 15px;
-    height: 10%;
+    height: 20%;
+    font-size: 17px;
+}
+#description-pokemon{
+    margin-top: 20px;
+    align-self: right;
+    font-size: 19px;
+}
+@media (max-width: 768px) {
+    header{
+        flex-direction: column;
+        align-items: center;
+        height: 8.5rem;
+        display: flex;
+        font-size: 14px;
+    }
+
+    header input{
+        width: 100%;
+        margin-top: 15px;
+        height: 30px;
+    }
+    .card{
+        width: 95%;
+        height: 70vh;
+    }
+
+    .card-header{
+        font-size: 10px;
+    }
+    
+    .card-image-container{
+        width: 90%;
+        height: 30%;
+        
+    }
+
+    .card-phrase{
+        width: 130%;
+        font-size: 12px;
+    }
+    
+
+    .card-stats{
+        margin-top: -10px;
+        font-size: 12px;
+        padding: 20px;
+        padding-top: 40px;
+        height: 40%;
+    }
+
+    .card-footer{
+        font-size: 9px;
+        height: 20%;
+    }
+
+    .footer-stats{
+        font-size: 11px;
+    }
 }

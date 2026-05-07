@@ -11,6 +11,7 @@
         <header>
             <h1>Pokedex</h1>
             <input type="text" id="search" placeholder="Buscar un Pokemon...">
+            <button id="button">Buscar</button>
         </header>
         <main>
             <div class="card">
@@ -30,18 +31,23 @@
                     </div>
                 </div>
                 <div class="card-stats">
-                    <p id="hability1">golpe</p>
-                    <p id="description1">Descripción del golpe</p>
-                    <p id="value">30</p>
-                    <p id="hability2">golpe2</p>
-                    <p id="description2">Descripción del golpe2</p>
-                    <p id="value2">50</p>
+                    <div class="stats">
+                        <p id="hability1">golpe</p>
+                        <p id="value">30</p>
+                    </div>
+                    <p id="description1" class="description">Descripción del golpe</p>
+                    <div class="stats">
+                        <p id="hability2">golpe2</p>
+                        <p id="value2">50</p>
+                    </div>
+                    <p id="description2" class="description">Descripción del golpe2</p>
                 </div>
                 <div class="card-footer">
-                    <p id="weakness">agua</p>
-                    <p id="resistance">eléctrico</p>
-                    <p id="retreat">1</p>
-                    <p id="description-pokemon">Descripción del pokemon</p>
+                    <div class="footer-stats">
+                        <p id="weakness">Debilidad: agua</p>
+                        <p id="resistance">Resistencia: eléctrico</p>
+                    </div>
+                <p id="description-pokemon" class="description">Bulbasaur es un Pokémon de tipo Planta/Veneno.</p>
                 </div>
             </div>
         </main>
