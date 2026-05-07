@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pokedex</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Pokedex</h1>
+            <input type="text" id="search" placeholder="Buscar un Pokemon...">
+        </header>
+        <main>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-name">
+                        <h2 id="name">Bulbasaur</h2>
+                    </div>
+                    <div class="card-info">
+                        <p id="id">#001</p>
+                        <p id="type">Planta/Veneno</p>
+                    </div>
+                </div>
+                <div class="card-image-container">
+                    <img id="image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur">
+                    <div class="card-phrase">
+                        <p id="phrase">¡Bulbasaur, el Pokémon Semilla!</p>
+                    </div>
+                </div>
+                <div class="card-stats">
+                    <p id="hability1">golpe</p>
+                    <p id="description1">Descripción del golpe</p>
+                    <p id="value">30</p>
+                    <p id="hability2">golpe2</p>
+                    <p id="description2">Descripción del golpe2</p>
+                    <p id="value2">50</p>
+                </div>
+                <div class="card-footer">
+                    <p id="weakness">agua</p>
+                    <p id="resistance">eléctrico</p>
+                    <p id="retreat">1</p>
+                    <p id="description-pokemon">Descripción del pokemon</p>
+                </div>
+            </div>
+        </main>
+        
+        <script src="code.js" async defer></script>
+    </body>
+</html>
