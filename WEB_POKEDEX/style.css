@@ -45,7 +45,7 @@ main{
     margin: 15px;
     padding: 15px;
     width: 28rem;
-    height: 45rem;
+    height: 48rem;
 }
 
 .card-header{
@@ -55,7 +55,7 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: space-between;
-    height: 5%;
+    height: 10%;
 }
 
 .card-info{
@@ -78,7 +78,7 @@ main{
     margin: 10px;
     padding: 15px;
     width: 25rem;
-    height: 30%;
+    height: 40%;
     z-index: 0;
 }
 
@@ -93,7 +93,7 @@ main{
     border-radius: 5px;
     width: 115%;
     position: relative;
-    top: -3.6rem;
+    top: -2rem;
     font-size: 14px;
     text-align: center;
     z-index: 1;
@@ -109,7 +109,7 @@ main{
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
-    height: 30%;
+    height: 40%;
     
 }
 
