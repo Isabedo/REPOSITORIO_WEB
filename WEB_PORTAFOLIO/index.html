@@ -6,181 +6,167 @@
         <title>Portafolio — Isabela</title>
         <meta name="author" content="Isabela">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style/stylesheet.css">
     </head>
-    <body >
-
+    <body class="star" id="stars"> 
+        
         <header class="site-header">
-        <a href="#inicio" class="logo">PORTAFOLIO</a>
-
-            <div class="botones">
-                <button id="change-theme">☼</button>
-                <button id="change-lenguage">EN-</button>
-            </div>
-
-            <button class="bt-menu-hamburguesa" id="hamburguesa"> ☰ </button>
+        <a href="#home" class="logo">ISABELA BEDOYA</a>
 
             <nav class="site-nav" id="site-nav">
-                <a href="#inicio" data-key="inicio">Inicio</a>
-                <a href="#programacion" data-key="programacion">Programación</a>
-                <a href="#arte" data-key="arte">Arte 2D y 3D</a>
+                <a href="#home" data-key="home">Inicio</a>
+                <a href="#projects" data-key="projects">Proyectos</a>
+                <a href="#about-me" data-key="about">Sobre mí</a>
+                
             </nav>
+
+            <div class="buttons">
+                <a href="#form"><button id="contact" class="btn-primary" data-key="contact">Contactame</button></a>
+                <button  class="btn-secondary change-theme"><p>☼</p></button>
+                <button  class="btn-secondary change-lenguage"><p>EN-</p></button>
+            </div>
+            <button class="bt-menu-hamburguesa btn-secondary" id="hamburguesa"> <p>☰ </p></button>
+
         </header>
+        
+        <div class="menu-fullscreen" id="menu-fullscreen">
+            <button class="menu-close" id="menu-close">✕</button>
+            <nav class="menu-fullscreen-nav">
+                <a href="#home" class="menu-link" data-key="home">Home</a>
+                <a href="#projects" class="menu-link" data-key="projects">Proyectos</a>
+                <a href="#about-me" class="menu-link" data-key="about">Sobre mí</a>
+            </nav>
+            <div class="menu-fullscreen-bottom-options">
+                    <button class="btn-secondary change-theme"><p>☼</p></button>
+                    <button  class="btn-secondary change-lenguage"><p>EN-</p></button>
+            </div>
+            <div class="menu-fullscreen-bottom">
+                <div class="menu-social">
+                    <a href="">[in]</a>
+                    <a href="">👾</a>
+                    <a href="">🅾</a>
+                    <a href="">🖂</a>
+                </div>
+                
+                <a href="#form"><button class="btn-primary" data-key="contact">Contáctame</button></a>
+            </div>
+        </div>
+
 
         <main>
-            <section id="inicio" class="seccion seccion--inicio">
-                <img src="RECURSOS/chooper.webp" alt="Foto de perfil de Isabela" class="perfil-img">
-                <div class="perfil-contenido">
-                    <h1 data-key="saludo">Hola, mi nombre es Isabela </h1>
-                    <h2 data-key="descripcion">Soy estudiante de comunicación y entretenimiento digital</h2>
-                    <p data-key="bienvenida">Bienvenidos a mi portafolio. Aquí podrán encontrar algunos de mis proyectos realizados
-                    durante mi carrera universitaria: programación, animación 2D y 3D.</p>
+            <section id="home" class="section section--home">
+                <div class="glow-bg"></div>
+
+                    <div class="hero-frame frame-home">
+                        <div class="frame-corner-tr"></div>
+                        <div class="frame-corner-bl"></div>
+                    <div class="profile-content">
+                        <h1 data-key="abilitie_home_1">✦ &nbsp;PROGRAMADORA&nbsp; ✦</h1>
+                        <h2 data-key="abilitie_home_2">Arte conceptual</h2>
+                        <div class="ornament-divider">✦</div>
+                        <p data-key="desc_home">Creo juegos e historias interactivas — programando la lógica, dibujando los personajes y animando los mundos que los hacen cobrar vida. </p>
+                        <a href="#projects"><button class="btn-primary cta" data-key="verMas">Ver proyectos</button></a>
+                    </div>
                 </div>
             </section>
 
-            <section id="programacion" class="seccion seccion--galeria">
-                <h2 class="seccion-titulo" data-key="programacion">Programación</h2>
-                <div class="galeria">
+            <section >
+                <div class="projects_acces section-galery" id="projects">
+                    <div class="galery-section">
+                        <div class="galeria-item">
+                            <a href="html/Proyectos_arte.html"><img src="RECURSOS/mascara.png" alt="persoanjes"> </a>
+                            <span class="label" data-key="desc_draws">Personajes/ criaturas</span>
+                        </div>
+                        <div class="galeria-item">
+                            <a href="html/Proyectos_programacion.html"><img src="RECURSOS/pong.jpg" alt="programación"> </a>
+                            <span class="label" data-key="desc_programming">Programación</span>
+                        </div>
+                    </div>
+                    <div class="galery-section">
+                        <div class="galeria-item">
+                            <a href="html/Proyectos_2D.html"><img src="RECURSOS/milo.png" alt="ANIMACION2D"> </a>
+                            <span class="label" data-key="desc_animacion2d">Animación 2D</span>
+                        </div>
+                        <div class="galeria-item">
+                            <a href="html/Proyectos_3D.html"><img src="RECURSOS/pong.jpg" alt="animacion3d"> </a>
+                            <span class="label" data-key="desc_animacion3d">Animación y modelado 3D </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="about-me" class="section section--aboutme">
+                <h2 class="section-title" data-key="about">Sobre mi</h2>
+                <div class="profile-content-about">
+                    <div class="profile-content-info hero-frame ">
+                        <p class="section-description" data-key="desc_about_me">Soy estudiante de comunicación y entretenimiento digital de 5to semestre. Me apasiona el desarrollo de videojuegos y la creación de experiencias interactivas. Con habilidades en programación, arte conceptual y animación, me esfuerzo por crear historias que conecten con los jugadores a nivel emocional y a mejorar constantenemnte mis conocimientos. Estoy emocionada por seguir creciendo en esta industria y contribuir con mi creatividad y dedicación a proyectos innovadores.</p>
 
-                    <article class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <h3>REM: Los fragmentos de Milo</h3>
+                    </div>
+                    <div class="profile-content-abilities ">
+                        <div class="section-abilitie">
+                            <div class="abilities hero-frame">
+                                <icon class="abilitie-icon">🛠️</icon> 
+                                <h3 class="abilitie-title" data-key="tools">Herramientas</h3>
+                                <p class="abilitie-description " >unity, Blender, Krita </p>
                             </div>
-                            <div class="card-back">
-                                <div class="card-back-top">
-                                    <h3>REM: Los fragmentos de Milo</h3>
-                                </div>
-                                <div class="foto-contenedor">
-                                    <img src="RECURSOS/milo.png" alt="Portada del juego REM" class="card-img">
-                                </div>
-                                <p class="card-descripcion" data-key="desc_rem">Juego 2D plataformero estilo Metroidvania</p>
-                                <a href="https://kira28.itch.io/rem-los-fragmentos-de-milo" target="_blank" class="card-enlace" data-key="verMas">Ver más</a>
+                            <div class="abilities hero-frame">
+                                <icon class="abilitie-icon">💼</icon> 
+                                <h3 class="abilitie-title" data-key="experience">Experiencia</h3>
+                                <p class="abilitie-description" data-key="desc_experience">Actualmente sin experiencia profesional </p>
+                            </div>
+                            
+                        </div>
+                        <div class="section-abilitie">
+                            <div class="abilities hero-frame">
+                                <icon class="abilitie-icon">💡</icon> 
+                                <h3 class="abilitie-title" data-key="abilities">Habilidades</h3>
+                                <p class="abilitie-description" data-key="desc_abilities">Programación, diseño de persoanjes, animación 2d y 3D,  </p>
+                            </div>
+                            <div class="abilities hero-frame">
+                                <icon class="abilitie-icon">📚</icon> 
+                                <h3 class="abilitie-title" data-key="studies">Estudios</h3>
+                                <p class="abilitie-description" data-key="desc_studies">- Tecnica en desarrollo de software en el Sena.<br> - Comunicación y entretenimiento digital en la universidad de Medellín.</p>
                             </div>
                         </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <h3>PONG — Recreación</h3>
-                            </div>
-                            <div class="card-back">
-                                <div class="card-back-top">
-                                    <h3>PONG — Recreación</h3>
-                                </div>
-                                <div class="foto-contenedor">
-                                    <img src="RECURSOS/pong.jpg" alt="Captura del juego Pong" class="card-img">
-                                </div>
-                                <p class="card-descripcion" data-key="desc_pong">Recreación del famoso juego PONG como práctica de programación</p>
-                                <a href="https://github.com/Isabedo/Portafolio-" target="_blank" class="card-enlace" data-key="verMas">Ver más</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <h3>The Last Memories</h3>
-                            </div>
-                            <div class="card-back">
-                                <div class="card-back-top">
-                                    <h3>The Last Memories</h3>
-                                </div>
-                                <div class="foto-contenedor">
-                                    <img src="RECURSOS/mascara.png" alt="Portada del juego The Last Memories" class="card-img">
-                                </div>
-                                <p class="card-descripcion" data-key="desc_memories">Juego realizado en Unity para mi primera Game Jam, con temática de máscaras</p>
-                                <a href="https://github.com/MakabeD/Mask" target="_blank" class="card-enlace" data-key="verMas">Ver más</a>
-                            </div>
-                        </div>
-                    </article>
+                    </div>
                 </div>
             </section>
 
-            <section id="arte" class="seccion seccion--galeria">
-                <h2 class="seccion-titulo" data-key="arte">Arte 2D y 3D</h2>
-                <div class="galeria">
-
-                    <article class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <h3>Todo lo que no dijimos</h3>
-                            </div>
-                            <div class="card-back">
-                                <div class="card-back-top">
-                                    <h3>Todo lo que no dijimos</h3>
-                                </div>
-                                <div class="foto-contenedor">
-                                    <img src="RECURSOS/animacion.png" alt="Fotograma de la animación 2D" class="card-img">
-                                </div>
-                                <p class="card-descripcion" data-key="desc_animacion2d">Animación 2D</p>
-                                <a href="RECURSOS/ANIMACION2D.mp4" target="_blank" class="card-enlace" data-key="verMas">Ver más</a>
-                            </div>
+            <section class="section form-container-general" id="form" >
+                <div class="form-info-container">
+                    <p class="section-title" data-key="contact_me">Trabajemos juntos</p>
+                    <div class="form-text" data-key="desc_form">Si estás buscando apoyo de programación o arte 2D y 3D en tu proyecto, no dudes en contactarme. Siempre estoy abierta a explorar nuevas ideas y ver dónde puedo contribuir. Ya sea que estés en las primeras etapas de desarrollo o profundamente en producción, me encantaría conocer más sobre tu proyecto y cómo podría ayudarte.</div>
+                </div>
+                <div class="form-container">
+                    <form action="">
+                        <div class="line-label">
+                            <label for="name" class="line-label" data-key="name">Nombre*</label>
+                            <label for="LastName" class="line-label" data-key="LastName">Apellido</label>
                         </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <h3>Restart</h3>
-                            </div>
-                            <div class="card-back">
-                                <div class="card-back-top">
-                                    <h3>Restart</h3>
-                                </div>
-                                <div class="foto-contenedor">
-                                    <img src="RECURSOS/animacion3d.png" alt="Fotograma de la animación 3D Restart" class="card-img">
-                                </div>
-                                <p class="card-descripcion" data-key="desc_animacion3d">Animación 3D</p>
-                                <a href="RECURSOS/CORTO3D.MP4" target="_blank" class="card-enlace" data-key="verMas">Ver más</a>
-                            </div>
+                        <div class="line-input">
+                            <input type="text" id="name" placeholder="Name" required class="line-input">
+                            <input type="text" id="LastName" placeholder="Last Name" class="line-input">
                         </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <h3>TARDIS</h3>
-                            </div>
-                            <div class="card-back">
-                                <div class="card-back-top">
-                                    <h3>TARDIS</h3>
-                                </div>
-                                <div class="foto-contenedor">
-                                    <img src="RECURSOS/RENDER_COMPOSITING.png" alt="Render 3D de la TARDIS de Doctor Who" class="card-img">
-                                </div>
-                                <p class="card-descripcion" data-key="desc_tardis">Render 3D inspirado en la máquina del tiempo del Doctor Who</p>
-                                <a href="RECURSOS/RENDER_COMPOSITING.png" target="_blank" class="card-enlace" data-key="verMas">Ver más</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <h3>Jarrones</h3>
-                            </div>
-                            <div class="card-back">
-                                <div class="card-back-top">
-                                    <h3>Jarrones</h3>
-                                </div>
-                                <div class="foto-contenedor">
-                                    <img src="RECURSOS/Jarrones_render.png" alt="Render 3D de jarrones texturizados" class="card-img">
-                                </div>
-                                <p class="card-descripcion" data-key="desc_jarrones">Render 3D haciendo uso de distintas técnicas de texturización</p>
-                                <a href="RECURSOS/Jarrones_render.png" target="_blank" class="card-enlace" data-key="verMas">Ver más</a>
-                            </div>
-                        </div>
-                    </article>
-
+                        <label for="email" data-key="email">Email*</label>
+                        <input type="email" id="email" placeholder="Email" required>
+                        <label for="message" data-key="message">Message*</label>
+                        <textarea id="message" placeholder="Message" required></textarea>
+                        <button type="submit" data-key="send">Enviar</button>
+                    </form>
                 </div>
             </section>
 
         </main>
+        
 
         <footer class="site-footer">
-            <p data-key="footer">© 2025 Isabela — Portafolio universitario</p>
+            <p data-key="footer">© 2026 Isabela — Portafolio universitario</p>
+            <div class="social">
+                <a href="" target="_blank">[in]</a>
+                <a href="" target="_blank">👾</a>
+                <a href="" target="_blank">🅾</a>
+                <a href="" target="_blank">🖂</a>
+            </div>
         </footer>
         <script src="code/script.js"></script>
 
