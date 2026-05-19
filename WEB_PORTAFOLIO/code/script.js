@@ -1,21 +1,53 @@
+
+/*Lenguaje y tema*/
 const buttonTheme = document.querySelectorAll('.change-theme');
 const buttonLenguage = document.querySelectorAll('.change-lenguage');
+/*fin lenguaje y tema*/
+/*menu hamburguesa*/
 const hamburguesa = document.getElementById('hamburguesa');
 const menuFullscreen = document.getElementById('menu-fullscreen');
 const menuClose = document.getElementById('menu-close');
+/*fin menu hamburguesa*/
+/*estrellas fondo*/
 const starsContainer = document.getElementById('stars');
-
+/*fin estrellas fondo*/
+/*formulario*/
+const form = document.getElementById('contactForm');
+/*fin formulario*/
+/*Juego integrado*/
+const btnJugar = document.getElementById('btnJugar');
+const modalJuego = document.getElementById('modalJuego');
+const cerrarModal = document.getElementById('cerrarModal');
+/*fin juego integrado*/
 
 let currentLanguage = 'es';
+iniciarReloj();
 
-
-
-// Cierra al hacer clic en cualquier link
-document.querySelectorAll('.menu-link').forEach(link => {
+/*logica juego integrado*/
+document.querySelectorAll('.menu-link-game').forEach(link => {
     link.addEventListener('click', () => {
         menuFullscreen.classList.remove('abierto');
     });
 });
+
+btnJugar.addEventListener('click', function (e) {
+        e.preventDefault();
+        modalJuego.classList.add('activo');
+    });
+
+    
+    cerrarModal.addEventListener('click', function () {
+        modalJuego.classList.remove('activo');
+    });
+
+    
+    modalJuego.addEventListener('click', function (e) {
+        if (e.target === modalJuego) {
+            modalJuego.classList.remove('activo');
+        }
+    });
+/*fin logica juego integrado*/
+/*Generación de estrellas de fondo*/
 for (let i = 0; i < 80; i++) {
     const star = document.createElement('div');
     star.className = 'star';
@@ -34,7 +66,8 @@ for (let i = 0; i < 80; i++) {
 
     starsContainer.appendChild(star);
 }
-
+/*fin generación de estrellas de fondo*/
+/*Lógica para cambio de tema y lenguaje*/
 buttonTheme.forEach(btn => {
     btn.addEventListener('click', () => {
         if (document.body.classList.contains('light-theme')) {
@@ -173,7 +206,8 @@ function changeLenguage(lang) {
     });
 }
 
-
+/*fin lógica para cambio de tema y lenguaje*/
+/*Lógica para menú hamburguesa*/
 hamburguesa.addEventListener('click', () => {
     menuFullscreen.classList.add('abierto');
 });
@@ -181,3 +215,69 @@ hamburguesa.addEventListener('click', () => {
 menuClose.addEventListener('click', () => {
     menuFullscreen.classList.remove('abierto');
 });
+/*Fin lógica para menú hamburguesa*/
+/*Lógica para reloj en vivo*/
+function iniciarReloj() {
+  var reloj = document.getElementById("liveClock");
+
+  function mostrarHora(desfase) {
+    var ahora = new Date(Date.now() + desfase);
+    var h = String(ahora.getHours()).padStart(2, "0");
+    var m = String(ahora.getMinutes()).padStart(2, "0");
+    var s = String(ahora.getSeconds()).padStart(2, "0");
+    reloj.textContent = h + ":" + m + ":" + s;
+  }
+
+  fetch("https://worldtimeapi.org/api/timezone/America/Bogota")
+    .then(function(r) { return r.json(); })
+    .then(function(datos) {
+      var desfase = new Date(datos.datetime) - new Date();
+      mostrarHora(desfase);
+      setInterval(function() { mostrarHora(desfase); }, 1000);
+    })
+    .catch(function() {
+      mostrarHora(0);
+      setInterval(function() { mostrarHora(0); }, 1000);
+    });
+}
+
+/*Fin lógica para reloj en vivo*/
+/*Lógica para validación de formulario*/
+
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    let valido = true;
+
+    // Limpia errores previos
+    document.querySelectorAll('.campo').forEach(c => c.classList.remove('con-error'));
+    document.getElementById('formExito').style.display = 'none';
+
+    // Valida nombre
+    const nombre = document.getElementById('name');
+    if (!nombre.value.trim()) {
+        nombre.closest('.campo').classList.add('con-error');
+        valido = false;
+    }
+
+    // Valida email
+    const email = document.getElementById('email');
+    if (!email.value.trim() || !email.checkValidity()) {
+        email.closest('.campo').classList.add('con-error');
+        valido = false;
+    }
+
+    // Valida mensaje
+    const mensaje = document.getElementById('message');
+    if (!mensaje.value.trim()) {
+        mensaje.closest('.campo').classList.add('con-error');
+        valido = false;
+    }
+
+    if (valido) {
+        document.getElementById('formExito').style.display = 'block';
+        form.reset();
+    }
+});
+/*Fin lógica para validación de formulario*/

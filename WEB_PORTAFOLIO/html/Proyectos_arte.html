@@ -8,15 +8,30 @@
     <link rel="stylesheet" href="../style/stylesheet.css">
 <link rel="stylesheet" href="../style/proyectos.css">
 </head>
+
 <body class="star bg" id="stars">
+    <div class="modal-overlay" id="modalJuego">
+        <div class="modal-contenido">
+            <button class="modal-cerrar" id="cerrarModal">✕</button>
+            
+            <iframe frameborder="0" 
+                src="https://itch.io/embed-upload/17600336?color=d1b6f6"
+                width="980" 
+                height="640" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
 
     <header class="site-header">
-        <a href="#home" class="logo">ISABELA BEDOYA</a>
+        <a href="../#home" class="logo">ISABELA BEDOYA</a>
 
             <nav class="site-nav" id="site-nav">
                 <a href="../#home" data-key="home">Inicio</a>
                 <a href="../#projects" data-key="projects">Proyectos</a>
                 <a href="../#about-me" data-key="about">Sobre mí</a>
+                <a href="../#services" data-key="services">Servicios</a>
+                <a  class="menu-link-game" data-key="play" id="btnJugar">Jugar</a>
                 
             </nav>
 
@@ -35,6 +50,8 @@
             <a href="../index.html#home" class="menu-link" data-key="home">Home</a>
             <a href="../index.html#projects" class="menu-link" data-key="projects">Proyectos</a>
             <a href="../index.html#about-me" class="menu-link" data-key="about">Sobre mí</a>
+            <a href="../index.html#services" class="menu-link" data-key="services">Servicios</a>
+            <a href="https://kira28.itch.io/pong-recreacion" target="_blank" class="menu-link" data-key="play" id="btnJugar">Jugar</a>
         </nav>
         <div class="menu-fullscreen-bottom-options">
             <button class="btn-secondary change-theme"><p>☼</p></button>
@@ -42,14 +59,18 @@
         </div>
         <div class="menu-fullscreen-bottom">
             <div class="menu-social">
-                <a href="">[in]</a>
-                <a href="">👾</a>
-                <a href="">🅾</a>
-                <a href="">🖂</a>
+                <a href="https://www.linkedin.com/in/isabela-bedoya-pérez-080681279/" target="_blank"><img src="../RECURSOS/linkdn.png" alt="LinkedIn" class="icon"></a>
+                <a href="https://github.com/Isabedo" target="_blank"><img src="https://cdn.worldvectorlogo.com/logos/github-icon-1.svg" alt="GitHub" class="icon"></a>
+                <a href="https://www.instagram.com/belatragedy?igsh=MTJnczVjdXFuaWRncg==" target="_blank"><img src="https://static.vecteezy.com/system/resources/thumbnails/023/986/885/small/instagram-logo-instagram-logo-transparent-instagram-icon-transparent-free-free-png.png" alt="Instagram" class="icon"></a>
+                <a href="mailto:isabelabedoya719@gmail.com" target="_blank"><img src="../RECURSOS/mail.png" alt="Email" class="icon"></a>
             </div>
                 
             <a href="../index.html#form"><button class="btn-primary" data-key="contact">Contáctame</button></a>
         </div>
+    </div>
+
+    <div class="clock">
+            <span class="nav-clock" id="liveClock">--:--:--</span>
     </div>
 
     <main class="main-projects section">
@@ -138,6 +159,12 @@
 
     <footer class="site-footer">
         <p>© 2026 Isabela — Portafolio universitario</p>
+        <div class="social">
+                <a href="https://www.linkedin.com/in/isabela-bedoya-pérez-080681279/" target="_blank"><img src="../RECURSOS/linkdn.png" alt="LinkedIn" class="icon"></a>
+                    <a href="https://github.com/Isabedo" target="_blank"><img src="https://cdn.worldvectorlogo.com/logos/github-icon-1.svg" alt="GitHub" class="icon"></a>
+                    <a href="https://www.instagram.com/belatragedy?igsh=MTJnczVjdXFuaWRncg==" target="_blank"><img src="https://static.vecteezy.com/system/resources/thumbnails/023/986/885/small/instagram-logo-instagram-logo-transparent-instagram-icon-transparent-free-free-png.png" alt="Instagram" class="icon"></a>
+                    <a href="mailto:isabelabedoya719@gmail.com" target="_blank"><img src="../RECURSOS/mail.png" alt="Email" class="icon"></a>
+            </div>
     </footer>
 
     <script src="../code/script.js"></script>

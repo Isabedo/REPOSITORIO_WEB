@@ -16,10 +16,12 @@
     --purple-light: #a78bfa;
     --moon-silver: #c8b8e8;
     --coral: #ff6b6b;
-    --coral-dark: #7e0000;
+    --coral-dark: #c30303;
     --gold: #d4a843;
     --text-light: #f0e8ff;
     --text-muted: #9b8ab8;
+    --text-tag: #f0e8ff;
+    --icons:invert(100%) sepia(100%) grayscale(100%) brightness(200%);
     --bg-card: rgba(26, 10, 46, 0.562);
 }
 
@@ -35,24 +37,91 @@
     --gold: #a07800;              
     --text-light: #1a0a2e;       
     --text-muted: #5c4d8a;        
+    --text-tag: #b9a5f3;         
     --bg-main: #f5f2ff;           
+    --icons: invert(0%) sepia(100%) grayscale(0%) brightness(100%);
     --bg-card: rgba(161, 130, 245, 0.212);
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
     width: 100vw;
+    
+}
+/*juego integrado*/
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
 }
 
+.modal-overlay.activo {
+    display: flex;
+}
+
+.modal-contenido {
+    position: relative;
+    width: 90vw;
+    max-width: 980px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px var(--coral-dark);
+}
+
+.modal-contenido iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    display: block;
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--coral-dark);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.modal-cerrar:hover {
+    background: var(--coral);
+}
+
+/*fin juego integrado*/
 .star {
     position: absolute;
     background:var(--text-light);
     border-radius: 50%; 
 }
 
+.clock {
+    position: fixed;
+    bottom: 0rem; right: 0rem;
+    color: var(--text-light);
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid var(--purple-light);
+    background: var(--purple-mid);
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    z-index: 2;
+}
 
 /*HEADER*/
 .site-header {
@@ -63,12 +132,11 @@ body {
     justify-content: space-between;
     z-index: 1;
     background-color: var(--purple-dark);
-    font-size: 1rem;
 }
 
 .btn-primary {
     padding: 0.7rem 2rem;
-    background: linear-gradient(135deg,var(--coral-dark), var(--coral));
+    background: var(--coral-dark);
     color: var(--moon-silver);
     font-size: 1rem;
     letter-spacing: 0.12rem;
@@ -88,7 +156,7 @@ body {
 .btn-secondary {
     width: 40px;
     height: 50px;
-    background: linear-gradient(0deg, var(--purple-mid), var(--purple-accent));
+    background: var(--purple-accent);
     
     
     clip-path: polygon(
@@ -141,7 +209,7 @@ body {
 
 .site-nav a {
     color: var(--text-light);
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-left: 3rem;
     font-weight: 10rem;
     border-bottom: 2px solid transparent;
@@ -251,6 +319,11 @@ body {
     color: var(--purple-light);
 }
 
+.icon{
+    width: 24px;
+    height: 24px;
+    filter:var(--icons) ;
+}
 /*FIN MENÚ HAMBURGUESA*/
 
 .section {
@@ -443,7 +516,7 @@ body {
     font-weight: 600;
     letter-spacing: 0.15rem;
     text-transform: uppercase;
-    color: var(--text-light);
+    color: var(--text-tag);
     z-index: 2; 
     transition: color 0.4s ease;
 }
@@ -451,6 +524,7 @@ body {
     color: var(--purple-light);
 }
 /*FIN GALERY*/
+/*servicios*/
 
 /*ABOUT*/
 
@@ -476,7 +550,7 @@ body {
     max-height: 30rem;
     max-width: 40%;
     padding: 3rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .section-abilitie {
@@ -498,18 +572,18 @@ body {
     padding: 2rem;
 }
 .abilitie-icon{
-    font-size: 3rem;
+    font-size: 2rem;
     display: inline;
 }
 
 .abilitie-title {
     display: inline;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0.05rem;
 }
 .abilitie-description {
-    font-size: 1.28rem;
+    font-size: 1.2rem;
     line-height: 1.6;
 }
 .section-title {
@@ -567,6 +641,7 @@ body {
 .line-label {
     display: inline-flex;
     width: 100%;
+    gap:25%;
 }
 
 .line-input {
@@ -588,19 +663,41 @@ body {
     color: var(--text-light);
 }
 
-.form-container form button {
-    padding: 0.75rem;
-    background: linear-gradient(135deg, var(--coral-dark), var(--coral));
-    color: var(--text-light);
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 50px;
-    letter-spacing: 0.05rem;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+
+.error-msg {
+    color: #c00;
+    font-size: 12px;
+    display: none;
+    margin-top: 4px;
 }
 
+.con-error input,
+.con-error textarea {
+    border: 2px solid #c00;
+}
+
+.con-error .error-msg {
+    display: block;
+}
+
+.form-exito {
+    display: none;
+    color: #2e7d32;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+.con-error .error-msg {
+    display: block;
+}
 /*FIN FORM*/
 /*FOOTER*/
 .site-footer {
@@ -622,17 +719,34 @@ body {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 480px), (max-width: 1024px) {
     .site-nav { display: none; }
     .buttons { display: none; }
     .bt-menu-hamburguesa { display: block; }
     
     .frame-home {
-        height: 80vw;
+        height: 50%;
+    }
+
+    .glow-bg {
+        width: 100%;
+        height: 300px;
     }
 
     .profile-content h1 {
-        font-size: 2rem;      
+        font-size: 1.3rem;      
+    }
+
+    .profile-content h2 {
+        font-size: 0.9rem;
+    }
+
+    .profile-content p{
+        font-size: 1rem;
+    }
+
+    .section{
+        padding: 1.2rem;
     }
 
     .cta{
@@ -657,6 +771,10 @@ body {
         overflow: hidden;
         object-fit: cover;
     }
+
+    .logo {
+        font-size: 20px;
+    }
     
     .profile-content-about{
         flex-direction: column;    
@@ -667,28 +785,37 @@ body {
     }
 
     .profile-content-info {
-        max-width: 96%;
+        max-width: 100%;
         padding: 2rem;
-        font-size: 1.30rem;
+        font-size: 1rem;
     }
     
+    .abilities {
+        width: 100%;
+        padding: 1rem;
+    }
     .abilitie-icon{
-        font-size: 3rem;
+        font-size: 1.5rem;
     }
 
     .abilitie-title {
-        font-size: 1.5 rem;
+        font-size: 1rem;
     }
     .abilitie-description {
-        font-size: 1.2 rem;
+        font-size: 1rem;
     }
     
     .profile-content-abilities{
         margin-left: 0rem;
+        display: flex;
+        gap: 0.5rem;
+        
     }
 
     .section-title {
-        margin-bottom: 0rem;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        margin-top: 2rem;
     }
 
     .form-container-general{
@@ -699,10 +826,15 @@ body {
        align-items: center;
        justify-content: center;
     }
+    .form-container {
+        width: 100%;
+        padding: 2rem;
+    }
 
     .form-text {
-        margin: 1rem;
-        font-size: 1.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
+        font-size: 1rem;
     }
 
     

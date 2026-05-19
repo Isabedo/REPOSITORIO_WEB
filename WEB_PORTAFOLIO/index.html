@@ -9,8 +9,22 @@
         <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style/stylesheet.css">
     </head>
+    
     <body class="star" id="stars"> 
-        
+    
+    <div class="modal-overlay" id="modalJuego">
+        <div class="modal-contenido">
+            <button class="modal-cerrar" id="cerrarModal">✕</button>
+            
+            <iframe frameborder="0" 
+                src="https://itch.io/embed-upload/17600336?color=d1b6f6"
+                width="980" 
+                height="640" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
         <header class="site-header">
         <a href="#home" class="logo">ISABELA BEDOYA</a>
 
@@ -18,6 +32,8 @@
                 <a href="#home" data-key="home">Inicio</a>
                 <a href="#projects" data-key="projects">Proyectos</a>
                 <a href="#about-me" data-key="about">Sobre mí</a>
+                <a href="#services" data-key="services">Servicios</a>
+                <a class="menu-link-game" data-key="play" id="btnJugar">Jugar</a>
                 
             </nav>
 
@@ -33,9 +49,12 @@
         <div class="menu-fullscreen" id="menu-fullscreen">
             <button class="menu-close" id="menu-close">✕</button>
             <nav class="menu-fullscreen-nav">
-                <a href="#home" class="menu-link" data-key="home">Home</a>
+                <a href="#home" class="menu-link" data-key="home">  Inicio</a>
                 <a href="#projects" class="menu-link" data-key="projects">Proyectos</a>
                 <a href="#about-me" class="menu-link" data-key="about">Sobre mí</a>
+                <a href="#services" class="menu-link" data-key="services">Servicios</a> 
+                <a href="https://kira28.itch.io/pong-recreacion" target="_blank" class="menu-link" data-key="play" id="btnJugar">Jugar</a>
+                
             </nav>
             <div class="menu-fullscreen-bottom-options">
                     <button class="btn-secondary change-theme"><p>☼</p></button>
@@ -43,16 +62,19 @@
             </div>
             <div class="menu-fullscreen-bottom">
                 <div class="menu-social">
-                    <a href="">[in]</a>
-                    <a href="">👾</a>
-                    <a href="">🅾</a>
-                    <a href="">🖂</a>
+                    <a href="https://www.linkedin.com/in/isabela-bedoya-pérez-080681279/" target="_blank"><img src="RECURSOS/linkdn.png" alt="LinkedIn" class="icon"></a>
+                    <a href="https://github.com/Isabedo" target="_blank"><img src="https://cdn.worldvectorlogo.com/logos/github-icon-1.svg" alt="GitHub" class="icon"></a>
+                    <a href="https://www.instagram.com/belatragedy?igsh=MTJnczVjdXFuaWRncg==" target="_blank"><img src="https://static.vecteezy.com/system/resources/thumbnails/023/986/885/small/instagram-logo-instagram-logo-transparent-instagram-icon-transparent-free-free-png.png" alt="Instagram" class="icon"></a>
+                    <a href="mailto:isabelabedoya719@gmail.com" target="_blank"><img src="RECURSOS/mail.png" alt="Email" class="icon"></a>
                 </div>
                 
                 <a href="#form"><button class="btn-primary" data-key="contact">Contáctame</button></a>
             </div>
         </div>
 
+        <div class="clock">
+            <span class="nav-clock" id="liveClock">--:--:--</span>
+        </div>
 
         <main>
             <section id="home" class="section section--home">
@@ -95,6 +117,48 @@
                     </div>
                 </div>
             </section>
+            <section id="services" class="section section--aboutme">
+                <h2 class="section-title" data-key="about">Servicios</h2>
+                <div class="profile-content-about">
+                    
+                    <div class="profile-content-abilities ">
+                        <div class="section-abilitie">
+                            <div class="abilities hero-frame">
+                                <icon class="abilitie-icon">👨‍💻</icon> 
+                                <h3 class="abilitie-title" data-key="tools">Programación</h3>
+                                <p class="abilitie-description " >Tengo conocimientos en Python, C#, HTML, CSS, JavaScript y motores gráficos como unity y Unreal Engine. </p>
+                                <ul class="list">
+                                    <li data-key="desc_programming_1">Desarrollo de mecánicas de juego y sistemas de interacción.</li>
+                                    <li data-key="desc_programming_2">Optimización de código para mejorar el rendimiento del juego.</li>
+                                    <li data-key="desc_programming_3">Desarrollo de sitios y páginas web interactivas.</li>
+                                </ul>
+                            </div>
+                            <div class="abilities hero-frame">
+                                <icon class="abilitie-icon">🎨</icon> 
+                                <h3 class="abilitie-title" data-key="experience">Arte conceptual</h3>
+                                <p class="abilitie-description" data-key="desc_experience">Diseño de entornos y personajes para videojuegos.</p>
+                                <ul class="list">
+                                    <li data-key="desc_draws_1">Creación de personajes y criaturas originales.</li>
+                                    <li data-key="desc_draws_2">Diseño de escenarios y fondos para juegos.</li>
+                                    <li data-key="desc_draws_3">Ilustraciones para proyectos de entretenimiento digital.</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        <div class="section-abilitie">
+                            <div class="abilities hero-frame">
+                                <icon class="abilitie-icon">⭐</icon> 
+                                <h3 class="abilitie-title" data-key="abilities">Animación 2D y 3D</h3>
+                                <p class="abilitie-description" data-key="desc_abilities">Manejo de programas como Blender y After Effects para crear animaciones 2D y 3D.</p>
+                                <ul class="list">
+                                    <li data-key="desc_animacion2d_1">Animación de personajes y objetos para juegos.</li>
+                                    <li data-key="desc_animacion2d_2">Creación de cinemáticas y secuencias animadas.</li>
+                                    <li data-key="desc_animacion2d_3">Modelado y animación 3D para proyectos de entretenimiento digital.</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="about-me" class="section section--aboutme">
                 <h2 class="section-title" data-key="about">Sobre mi</h2>
                 <div class="profile-content-about">
@@ -132,29 +196,46 @@
                 </div>
             </section>
 
-            <section class="section form-container-general" id="form" >
-                <div class="form-info-container">
-                    <p class="section-title" data-key="contact_me">Trabajemos juntos</p>
-                    <div class="form-text" data-key="desc_form">Si estás buscando apoyo de programación o arte 2D y 3D en tu proyecto, no dudes en contactarme. Siempre estoy abierta a explorar nuevas ideas y ver dónde puedo contribuir. Ya sea que estés en las primeras etapas de desarrollo o profundamente en producción, me encantaría conocer más sobre tu proyecto y cómo podría ayudarte.</div>
+    <section class="section form-container-general" id="form">
+        <div class="form-info-container">
+            <p class="section-title" data-key="contact_me">Trabajemos juntos</p>
+            <div class="form-text" data-key="desc_form">Si estás buscando apoyo de programación o arte 2D y 3D en tu proyecto, no dudes en contactarme. Siempre estoy abierta a explorar nuevas ideas y ver dónde puedo contribuir. Ya sea que estés en las primeras etapas de desarrollo o profundamente en producción, me encantaría conocer más sobre tu proyecto y cómo podría ayudarte.</div>
+        </div>
+        <div class="form-container">
+            <form id="contactForm" novalidate>
+
+                <div class="line-label">
+                    <label for="name" data-key="name">Nombre*</label>
+                    <label for="lastName" data-key="lastName">Apellido</label>
                 </div>
-                <div class="form-container">
-                    <form action="">
-                        <div class="line-label">
-                            <label for="name" class="line-label" data-key="name">Nombre*</label>
-                            <label for="LastName" class="line-label" data-key="LastName">Apellido</label>
-                        </div>
-                        <div class="line-input">
-                            <input type="text" id="name" placeholder="Name" required class="line-input">
-                            <input type="text" id="LastName" placeholder="Last Name" class="line-input">
-                        </div>
-                        <label for="email" data-key="email">Email*</label>
-                        <input type="email" id="email" placeholder="Email" required>
-                        <label for="message" data-key="message">Message*</label>
-                        <textarea id="message" placeholder="Message" required></textarea>
-                        <button type="submit" data-key="send">Enviar</button>
-                    </form>
+                <div class="line-input">
+                    <div class="campo">
+                        <input type="text" id="name" name="name" placeholder="Name" class="line-input" required>
+                        <span class="error-msg">Ingresa tu nombre</span>
+                    </div>
+                    <div class="campo">
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" class="line-input">
+                    </div>
                 </div>
-            </section>
+
+                <div class="campo">
+                    <label for="email" data-key="email">Email*</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <span class="error-msg">Ingresa un email válido</span>
+                </div>
+
+                <div class="campo">
+                    <label for="message" data-key="message">Message*</label>
+                    <textarea id="message" name="message" placeholder="Message" required></textarea>
+                    <span class="error-msg">El mensaje no puede estar vacío</span>
+                </div>
+
+                <button type="submit" data-key="send" class="btn-primary">Enviar</button>
+                <p class="form-exito" id="formExito">✅ ¡Mensaje enviado! Me pondré en contacto pronto.</p>
+
+            </form>
+        </div>
+    </section>
 
         </main>
         
@@ -162,10 +243,10 @@
         <footer class="site-footer">
             <p data-key="footer">© 2026 Isabela — Portafolio universitario</p>
             <div class="social">
-                <a href="" target="_blank">[in]</a>
-                <a href="" target="_blank">👾</a>
-                <a href="" target="_blank">🅾</a>
-                <a href="" target="_blank">🖂</a>
+                <a href="https://www.linkedin.com/in/isabela-bedoya-pérez-080681279/" target="_blank"><img src="RECURSOS/linkdn.png" alt="LinkedIn" class="icon"></a>
+                    <a href="https://github.com/Isabedo" target="_blank"><img src="https://cdn.worldvectorlogo.com/logos/github-icon-1.svg" alt="GitHub" class="icon"></a>
+                    <a href="https://www.instagram.com/belatragedy?igsh=MTJnczVjdXFuaWRncg==" target="_blank"><img src="https://static.vecteezy.com/system/resources/thumbnails/023/986/885/small/instagram-logo-instagram-logo-transparent-instagram-icon-transparent-free-free-png.png" alt="Instagram" class="icon"></a>
+                    <a href="mailto:isabelabedoya719@gmail.com" target="_blank"><img src="RECURSOS/mail.png" alt="Email" class="icon"></a>
             </div>
         </footer>
         <script src="code/script.js"></script>

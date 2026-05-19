@@ -127,7 +127,7 @@
     font-size: 0.8rem;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
-    color: var(--coral);
+    color: var(--text-tag);
     font-family: 'Cinzel', serif;
     z-index: 2;
 }
