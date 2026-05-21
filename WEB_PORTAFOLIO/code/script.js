@@ -2,6 +2,7 @@
 /*Lenguaje y tema*/
 const buttonTheme = document.querySelectorAll('.change-theme');
 const buttonLenguage = document.querySelectorAll('.change-lenguage');
+const temaGuardado = localStorage.getItem('tema');
 /*fin lenguaje y tema*/
 /*menu hamburguesa*/
 const hamburguesa = document.getElementById('hamburguesa');
@@ -19,9 +20,24 @@ const btnJugar = document.getElementById('btnJugar');
 const modalJuego = document.getElementById('modalJuego');
 const cerrarModal = document.getElementById('cerrarModal');
 /*fin juego integrado*/
-
+/*mapa*/
+const map = L.map('map').setView([6.2351, -75.6018], 16);
+/*fin mapa*/
 let currentLanguage = 'es';
 iniciarReloj();
+
+
+/*Lógica para mapa*/
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+L.marker([6.2351, -75.6018])
+    .addTo(map)
+    .bindPopup('Universidad de Medellín')
+    .openPopup();
+
+/*Fin mapa*/
 
 /*logica juego integrado*/
 document.querySelectorAll('.menu-link-game').forEach(link => {
@@ -68,16 +84,25 @@ for (let i = 0; i < 80; i++) {
 }
 /*fin generación de estrellas de fondo*/
 /*Lógica para cambio de tema y lenguaje*/
-buttonTheme.forEach(btn => {
-    btn.addEventListener('click', () => {
-        if (document.body.classList.contains('light-theme')) {
-            btn.textContent = '☼';
-            document.body.classList.remove('light-theme');
-        } else {
-            btn.textContent = '☾';
-            document.body.classList.add('light-theme');
+if (temaGuardado === 'light') {
+    document.body.classList.add('light-theme');
+    document.querySelectorAll('.change-theme').forEach(btn => {
+        btn.querySelector('p').textContent = '☾';
+    });
+}
 
-        }
+// Botón de tema
+document.querySelectorAll('.change-theme').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const esClaro = document.body.classList.toggle('light-theme');
+
+        // Guarda en localStorage
+        localStorage.setItem('tema', esClaro ? 'light' : 'dark');
+
+        // Actualiza el ícono en todos los botones
+        document.querySelectorAll('.change-theme').forEach(b => {
+            b.querySelector('p').textContent = esClaro ? '☾' : '☼';
+        });
     });
 });
 
